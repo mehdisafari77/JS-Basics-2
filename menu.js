@@ -98,21 +98,46 @@ console.log(pizza.category)
     tags. That way, you'll be able to use this
     data in some functions that you'll write.
 */
+const foodArr = [
+    {
+        name: "Cheese",
+        price: 12,
+        popularity: 9,
+        rating: 8.5,
+        tags: ["cheesy", "old"]
+    },
+    {
+        name: "pepperoni",
+        price: 13,
+        popularity: 10,
+        rating: 7,
+        tags: ["classic", "oily"]
+    },
+    {
+        name: "Mushroom",
+        price: 14,
+        popularity: 8.5,
+        rating: 7.5,
+        tags: ["best", "newyork"]
+    },
+    {
+        name: "Mix",
+        price: 16,
+        popularity: 9.2,
+        rating: 6.4,
+        tags: ["combo"]
+    },
+    {
+        name: "New York",
+        price: 10,
+        popularity: 9.5,
+        rating: 9.5,
+        tags: ["original", "thin"]
+    },
 
-const foodArr = {
-    name: 'Cheese',
-    price: 4,
-    category: 'classic',
-    popularity: 9,
-    rating: 9,
-    tags: [
-        'cheesy',
-        'white',
-        'classic'
-    ]
-}
+]
 
-console.log(foodArr.name)
+console.log(foodArr[0].name)
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -126,8 +151,11 @@ console.log(foodArr.name)
     your food objects has.
 */
 
-const filteredFood = foodArr.filter(foodArr => foodArr.tags === 'cheesy')
-console.log(filteredFood)
+const filteredFood = foodArr.filter(food => {
+    if (food.tags.includes("original")) {
+        console.log(food.name)
+    }
+})
 
 
 
