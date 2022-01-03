@@ -198,33 +198,31 @@ const filteredFood = foodArr.filter(food => {
     Return the filtered array from the entire function
 */
 
-let filterByProperty = (property, number, type ) => {
-    let filteredArr = []
+const propertyFilter = (property, number, type ) => {
+    const arrFiltered = []
 
     foodArr.filter(food => {
         if (type === 'above' && property === 'rating' && food.rating > number) {
-                filteredArr.push(food)
+            arrFiltered.push(food)
             }
-        if  (type === 'below' && property === 'rating' && food.rating < number) {
-            filteredArr.push(food)
+        else if  (type === 'below' && property === 'rating' && food.rating < number) {
+            arrFiltered.push(food)
         }
-        if  (type === 'above' && property === 'popularity' && food.popularity > number) {
-            filteredArr.push(food)
+        else if  (type === 'above' && property === 'popularity' && food.popularity > number) {
+            arrFiltered.push(food)
         }
-        if  (type === 'below' && property === 'popularity' && food.popularity < number) {
-            filteredArr.push(food)
+        else if  (type === 'below' && property === 'popularity' && food.popularity < number) {
+            arrFiltered.push(food)
         }
-        if  (type === 'above' && property === 'price' && food.price > number) {
-            filteredArr.push(food)
+        else if  (type === 'above' && property === 'price' && food.price > number) {
+            arrFiltered.push(food)
         }
-        if  (type === 'below' && property === 'price' && food.price < number) {
-            filteredArr.push(food)
+        else if  (type === 'below' && property === 'price' && food.price < number) {
+            arrFiltered.push(food)
         } 
     })
-    return filteredArr
+    return arrFiltered
 }
-console.log(filterByProperty("rating", 8, "above"))
-
 
 /*
     Invoke the `filterByProperty` function passing
@@ -233,4 +231,4 @@ console.log(filterByProperty("rating", 8, "above"))
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+console.log(propertyFilter("rating", 6, "above"))
