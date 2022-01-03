@@ -198,12 +198,33 @@ const filteredFood = foodArr.filter(food => {
     Return the filtered array from the entire function
 */
 
-// const filterByProperty = (property, number, type) => {
-//     const filterArray2 = []
-//     const filterArray = foodArr.filter(function(elem) {
+let filterByProperty = (property, number, type ) => {
+    let filteredArr = []
 
-//     })
-// }
+    foodArr.filter(food => {
+        if (type === 'above' && property === 'rating' && food.rating > number) {
+                filteredArr.push(food)
+            }
+        if  (type === 'below' && property === 'rating' && food.rating < number) {
+            filteredArr.push(food)
+        }
+        if  (type === 'above' && property === 'popularity' && food.popularity > number) {
+            filteredArr.push(food)
+        }
+        if  (type === 'below' && property === 'popularity' && food.popularity < number) {
+            filteredArr.push(food)
+        }
+        if  (type === 'above' && property === 'price' && food.price > number) {
+            filteredArr.push(food)
+        }
+        if  (type === 'below' && property === 'price' && food.price < number) {
+            filteredArr.push(food)
+        } 
+    })
+    return filteredArr
+}
+console.log(filterByProperty("rating", 8, "above"))
+
 
 /*
     Invoke the `filterByProperty` function passing
